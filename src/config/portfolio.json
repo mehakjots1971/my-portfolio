@@ -1,0 +1,74 @@
+{
+  "theme": {
+    "default": "dark"
+  },
+  "hero": {
+    "name": "Alex Doe",
+    "title": "Senior Full Stack Engineer",
+    "intro": "Building scalable web applications, modern UIs, and robust architectures.",
+    "techBadges": ["React", "Spring Boot", "TypeScript", "Tailwind CSS"],
+    "profileImage": "/assets/profile.jpg",
+    "buttons": {
+      "projects": true,
+      "resume": true,
+      "github": true,
+      "linkedin": true,
+      "contact": true
+    }
+  },
+  "about": {
+    "content": "With 6 years of experience in full-stack development, I specialize in architecting scalable systems from the ground up. My expertise spans building dynamic, accessible frontends with React, to engineering resilient backend APIs with Spring Boot. I have a proven track record of implementing robust JWT authentication, real-time features using WebSockets and WebRTC, and optimizing performance for high-traffic applications. I thrive in environments that challenge me to continuously solve complex engineering problems."
+  },
+  "skills": {
+    "frontend": ["React", "Redux", "Tailwind CSS", "JavaScript (ES6+)", "TypeScript", "Vite", "Framer Motion"],
+    "backend": ["Java 17", "Spring Boot", "RESTful APIs", "JWT Authentication", "Microservices"],
+    "database": ["MySQL", "MongoDB", "Redis", "PostgreSQL"],
+    "advanced": ["WebRTC", "WebSockets", "Performance Optimization", "System Arch"],
+    "tools": ["Git", "Docker", "AWS", "CI/CD", "Linux"]
+  },
+  "projects": [
+    {
+      "id": "e-commerce-platform",
+      "title": "Enterprise E-Commerce Platform",
+      "description": "A high-performance e-commerce platform handling 10k+ concurrent users with real-time inventory management.",
+      "techStack": ["React", "Spring Boot", "Redis", "MySQL", "Tailwind CSS"],
+      "challenges": "Resolving inventory desync under high load and minimizing frontend rendering bottlenecks.",
+      "architecture": "Implemented a CQRS pattern on the backend with Redis caching layer. Frontend utilizes React Server Components for optimal LCP.",
+      "github": "https://github.com/alexdoe/ecommerce",
+      "live": "https://ecommerce.alexdoe.com",
+      "screenshot": "/assets/project1.png"
+    },
+    {
+      "id": "realtime-collaboration",
+      "title": "Real-time Code Collaborative Editor",
+      "description": "A browser-based collaborative environment allowing multiple developers to edit code simultaneously with presence indicators.",
+      "techStack": ["React", "WebSockets", "WebRTC", "Node.js", "MongoDB"],
+      "challenges": "Managing concurrent operational transformations to prevent code conflicts during simultaneous edits.",
+      "architecture": "Utilizes WebRTC for low-latency peer-to-peer communication, with a WebSocket signaling server as a fallback.",
+      "github": "https://github.com/alexdoe/collab-editor",
+      "live": "https://editor.alexdoe.com",
+      "screenshot": "/assets/project2.png"
+    }
+  ],
+  "engineering": {
+    "show": true,
+    "philosophy": "Software engineering is more than just writing code; it's about building resilient, maintainable, and scalable systems. I prioritize clean code principles, comprehensive testing, and thoughtful architecture. My approach is pragmatic, preferring proven patterns over trendy tech, while always keeping an eye on performance and user experience."
+  },
+  "github": {
+    "username": "alexdoe",
+    "pinnedRepos": [
+      "react-spring-auth-boilerplate",
+      "advanced-webrtc-signaling"
+    ]
+  },
+  "resume": {
+    "url": "/assets/resume.pdf"
+  },
+  "social": {
+    "email": "alex.doe@example.com",
+    "linkedin": "https://linkedin.com/in/alexdoe",
+    "github": "https://github.com/alexdoe",
+    "whatsapp": "+1234567890",
+    "phone": "+1234567890"
+  }
+}
