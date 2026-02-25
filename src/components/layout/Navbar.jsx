@@ -25,12 +25,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-portfolio-dark/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-gray-800' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/70 dark:bg-[#050505]/70 backdrop-blur-xl shadow-sm border-b border-portfolio-accent/10 dark:border-portfolio-accent/20' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0">
-            <a href="#" className="text-xl md:text-2xl font-bold tracking-tighter text-gray-900 dark:text-white">
-              {portfolioData.hero.name.split(' ')[0]}<span className="text-portfolio-accent">.dev</span>
+            <a href="#" className="text-xl md:text-2xl font-extrabold tracking-tight">
+              <span className="text-gradient animate-gradient-x">{portfolioData.hero.name.split(' ')[0]}</span>
+              <span className="text-portfolio-tertiary">.dev</span>
             </a>
           </div>
           
@@ -41,7 +42,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-600 dark:text-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-accent font-medium text-sm transition-colors"
+                  className="font-sans text-sm tracking-wide text-gray-600 dark:text-gray-300 hover:text-portfolio-accent dark:hover:text-portfolio-secondary font-medium transition-colors"
                 >
                   {link.name}
                 </a>
@@ -50,7 +51,7 @@ const Navbar = () => {
             
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-colors"
+              className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-portfolio-accent/10 hover:text-portfolio-accent dark:hover:bg-portfolio-accent/20 dark:hover:text-portfolio-accent focus:outline-none transition-colors"
               aria-label="Toggle dark mode"
             >
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -61,13 +62,13 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-colors"
+              className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-portfolio-accent focus:outline-none transition-colors"
             >
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"
+              className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-portfolio-accent focus:outline-none"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -77,14 +78,14 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-portfolio-dark border-b border-gray-200 dark:border-gray-800 shadow-lg">
+        <div className="md:hidden glass border-b-0 absolute w-full shadow-2xl">
           <div className="px-4 pt-2 pb-6 space-y-1 sm:px-3 flex flex-col">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-3 py-3 text-base font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                className="block px-3 py-3 text-base font-sans font-medium text-gray-800 dark:text-gray-200 hover:text-portfolio-secondary dark:hover:text-portfolio-secondary rounded-md"
               >
                 {link.name}
               </a>

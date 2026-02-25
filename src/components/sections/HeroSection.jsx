@@ -10,9 +10,10 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-portfolio-accent/20 rounded-full blur-[120px] -z-10 mix-blend-screen pointer-events-none"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-portfolio-accent/10 rounded-full blur-[150px] -z-10 mix-blend-screen pointer-events-none"></div>
+      {/* Background animated glow effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-portfolio-secondary/20 rounded-full blur-[120px] -z-10 mix-blend-screen pointer-events-none animate-blob"></div>
+      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-portfolio-accent/20 rounded-full blur-[120px] -z-10 mix-blend-screen pointer-events-none animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-portfolio-tertiary/10 rounded-full blur-[150px] -z-10 mix-blend-screen pointer-events-none animate-blob animation-delay-4000"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-8">
@@ -24,13 +25,13 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">
-                Hi, I'm <span className="text-portfolio-accent">{hero.name}</span>
+              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-gray-900 dark:text-white mb-4 leading-tight">
+                Hi, I'm <span className="text-gradient animate-gradient-x">{hero.name}</span>
               </h1>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-600 dark:text-gray-300 mb-6">
+              <h2 className="text-2xl md:text-3xl font-medium text-gray-600 dark:text-gray-300 mb-6 font-body">
                 {hero.title}
               </h2>
-              <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed font-light">
                 {hero.intro}
               </p>
             </motion.div>
@@ -54,14 +55,14 @@ const HeroSection = () => {
             >
               {hero.buttons.projects && (
                 <a href="#projects">
-                  <Button variant="primary">
+                  <Button variant="primary" className="shadow-glow-secondary">
                     View Projects <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </a>
               )}
               {hero.buttons.resume && (
                 <a href={resume.url} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline">
+                  <Button variant="outline" className="glass hover:text-white hover:bg-portfolio-accent border-portfolio-accent/30 text-gray-900 dark:text-white">
                     <Download className="mr-2 w-4 h-4" /> Resume
                   </Button>
                 </a>
@@ -75,17 +76,17 @@ const HeroSection = () => {
               className="mt-8 flex items-center justify-center md:justify-start gap-6 text-gray-500 dark:text-gray-400"
             >
               {hero.buttons.github && (
-                <a href={social.github} target="_blank" rel="noopener noreferrer" className="hover:text-portfolio-accent transition-colors">
+                <a href={social.github} target="_blank" rel="noopener noreferrer" className="hover:text-portfolio-accent transition-colors hover:scale-110 transform duration-300">
                   <Github className="w-6 h-6" />
                 </a>
               )}
               {hero.buttons.linkedin && (
-                <a href={social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-portfolio-accent transition-colors">
+                <a href={social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-portfolio-accent transition-colors hover:scale-110 transform duration-300">
                   <Linkedin className="w-6 h-6" />
                 </a>
               )}
               {hero.buttons.contact && (
-                <a href="#contact" className="hover:text-portfolio-accent transition-colors">
+                <a href="#contact" className="hover:text-portfolio-accent transition-colors hover:scale-110 transform duration-300">
                   <Mail className="w-6 h-6" />
                 </a>
               )}
@@ -99,8 +100,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex-1 w-full max-w-sm md:max-w-md relative"
           >
-            <div className="aspect-square rounded-full md:rounded-[2rem] overflow-hidden border-4 border-white dark:border-portfolio-dark-card shadow-2xl relative z-10">
-              {/* Fallback image if asset is missing, using a placeholder logic or the config url */}
+            <div className="aspect-square rounded-[2.5rem] overflow-hidden border border-white/20 dark:border-gray-800/50 glass shadow-2xl relative z-10 animate-float">
+              {/* Fallback image if asset is missing */}
               <img 
                 src={hero.profileImage} 
                 alt={hero.name} 
@@ -112,7 +113,7 @@ const HeroSection = () => {
               />
             </div>
             {/* Decorative background shape */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-accent to-blue-500 rounded-full md:rounded-[2rem] transform rotate-6 scale-105 -z-10 opacity-50 blur-sm"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-secondary to-portfolio-tertiary rounded-[2.5rem] transform rotate-6 scale-105 -z-10 opacity-40 blur-md"></div>
           </motion.div>
         </div>
       </div>
